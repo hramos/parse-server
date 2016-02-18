@@ -1,6 +1,4 @@
-<img src="http://parse.com/assets/svgs/parse-infinity.svg" alt="Parse logo" height="70"/>
-
-## Open Source Parse API Server
+![Parse Server logo](.github/parse-server-logo.png?raw=true)
 
 [![Build Status](https://img.shields.io/travis/ParsePlatform/parse-server/master.svg?style=flat)](https://travis-ci.org/ParsePlatform/parse-server)
 [![Coverage Status](https://img.shields.io/codecov/c/github/ParsePlatform/parse-server/master.svg)](https://codecov.io/github/ParsePlatform/parse-server?branch=master)
@@ -33,7 +31,7 @@ The following guide shows how you can deploy your own Parse API server to Heroku
 
 Click the Heroku Button to automatically set up parse-server-example as a new application on Heroku. You will be asked for an application id and master key. You can choose any unique string for each of these variables.
 
-<a href="https://heroku.com/deploy?template=https://github.com/ParsePlatform/parse-server-example">
+<a href="https://heroku.com/deploy">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
@@ -44,7 +42,6 @@ Some example curl to test if the api server is up and running
 ### 3. Connect your app to Parse Server
 
 Redirect to Quick Starts on Parse.com?
-
 
 
 ---
@@ -131,6 +128,9 @@ For more informations about custom auth please see the examples:
 * databaseAdapter (unfinished) - The backing store can be changed by creating an adapter class (see `DatabaseAdapter.js`)
 * loggerAdapter - The default behavior/transport (File) can be changed by creating an adapter class (see [`LoggerAdapter.js`](https://github.com/ParsePlatform/parse-server/blob/master/src/Adapters/Logger/LoggerAdapter.js))
 * enableAnonymousUsers - Defaults to true. Set to false to disable anonymous users.
+
+
+
 ---
 
 ### Usage
