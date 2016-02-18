@@ -31,7 +31,7 @@ The following guide shows how you can deploy your own Parse API server to Heroku
 
 Click the Heroku Button to automatically set up parse-server-example as a new application on Heroku. You will be asked for an application id and master key. You can choose any unique string for each of these variables.
 
-<a href="https://heroku.com/deploy">
+<a href="https://heroku.com/deploy?template=https://github.com/hramos/parse-server/tree/quickstart">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
