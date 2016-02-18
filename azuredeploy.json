@@ -46,14 +46,14 @@
     },
     "repoURL": {
       "type": "string",
-      "defaultValue": "https://github.com/parseplatform/parse-server-example.git",
+      "defaultValue": "https://github.com/hramos/parse-server.git",
       "metadata": {
         "description": "The URL for the GitHub repository that contains the project to deploy."
       }
     },
     "branch": {
       "type": "string",
-      "defaultValue": "master",
+      "defaultValue": "quickstart",
       "metadata": {
         "description": "The branch of the GitHub repository to use."
       }

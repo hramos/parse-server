@@ -31,9 +31,44 @@ The following guide shows how you can deploy your own Parse API server to Heroku
 
 Click the Heroku Button to automatically set up parse-server-example as a new application on Heroku. You will be asked for an application id and master key. You can choose any unique string for each of these variables.
 
-<a href="https://heroku.com/deploy?template=https://github.com/hramos/parse-server/tree/quickstart">
+<a href="https://heroku.com/deploy?template=https://github.com/hramos/parse-server/tree/quickstart" target="_blank">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
+
+
+
+curl -n -X POST https://api.heroku.com/app-setups \
+ -H "Content-Type:application/json" \
+  -H "Accept:application/vnd.heroku+json; version=3" \
+   -d '{"source_blob": { "url":"https://github.com/hramos/parse-server/tarball/quickstart/"} }'
+
+
+Testing other integrations:
+
+AWS:
+
+<a title="Deploy to AWS" href="https://console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/newApplication?applicationName=ParseServer&solutionStackName=Node.js&tierName=WebServer&sourceBundleUrl=https://s3.amazonaws.com/elasticbeanstalk-samples-us-east-1/eb-parse-server-sample/parse-server-example.zip" target="_blank"><img src="http://d0.awsstatic.com/product-marketing/Elastic%20Beanstalk/deploy-to-aws.png" height="40"></a>
+
+_This needs to be fixed so that we use some zip file that is automatically updated when examples/ is updated.
+
+http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/launch-now-url.html
+
+AWS requires uploading project to S3 or somewhere
+https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=ParseServer&solutionStackName=Node.js&tierName=WebServer&sourceBundleUrl=https://s3.amazonaws.com/elasticbeanstalk-samples-us-east-1/eb-parse-server-sample/parse-server-example.zip
+
+Azure:
+
+[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
+
+<a href="https://azuredeploy.net/?repository=https://github.com/hramos/parse-server" target="_blank">
+    <img src="http://azuredeploy.net/deploybutton.png"/>
+</a>
+
+Scalingo:
+
+[![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy)
+
+
 
 ### 2. Test!
 
