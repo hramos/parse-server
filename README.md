@@ -1,6 +1,6 @@
 <img src="http://parse.com/assets/svgs/parse-infinity.svg" alt="Parse logo" height="70"/>
 
-## Parse Server
+## Open Source Parse API Server
 
 [![Build Status](https://img.shields.io/travis/ParsePlatform/parse-server/master.svg?style=flat)](https://travis-ci.org/ParsePlatform/parse-server)
 [![Coverage Status](https://img.shields.io/codecov/c/github/ParsePlatform/parse-server/master.svg)](https://codecov.io/github/ParsePlatform/parse-server?branch=master)
@@ -18,13 +18,32 @@ Documentation for Parse Server is available in the [wiki](https://github.com/Par
 
 If you're interested in developing for Parse Server, the [Development guide](https://github.com/ParsePlatform/parse-server/wiki/Development-Guide) will help you get set up.
 
-### Example Project
-
-Check out the [parse-server-example project](https://github.com/ParsePlatform/parse-server-example) repository for an example of a Node.js application that uses the parse-server module on Express.
-
 ### Migration Guide
 
-Migrate your existing Parse apps to your own Parse Server. The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
+The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
+
+## Getting Started
+
+We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository.
+
+The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) README.
+
+
+### 1. Deploy to Heroku
+
+Click the Heroku Button to automatically set up parse-server-example as a new application on Heroku. You will be asked for an application id and master key. You can choose any unique string for each of these variables.
+
+<a href="https://heroku.com/deploy?template=https://github.com/ParsePlatform/parse-server-example">
+  <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
+</a>
+
+### 2. Test!
+
+Some example curl to test if the api server is up and running
+
+### 3. Connect your app to Parse Server
+
+Redirect to Quick Starts on Parse.com?
 
 
 
