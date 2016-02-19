@@ -16,7 +16,7 @@ Documentation for Parse Server is available in the [wiki](https://github.com/Par
 
 If you're interested in developing for Parse Server, the [Development guide](https://github.com/ParsePlatform/parse-server/wiki/Development-Guide) will help you get set up.
 
-### Migration Guide
+#### Migration Guide
 
 The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
 
@@ -26,7 +26,7 @@ We have provided a basic Node.js application that uses the parse-server module o
 
 This Quick Start will guide you through the steps to set up your first Parse Server on Heroku with the MongoLab add-on.
 
-### 1. Deploy to Heroku + MongoLab
+#### 1. Deploy to Heroku + MongoLab
 
 Click the Heroku Button to automatically provision the example server as a new application on Heroku:
 
@@ -36,11 +36,11 @@ Click the Heroku Button to automatically provision the example server as a new a
 
 You will be asked for an application id and master key. You can choose any value you want for each of these variables. Click on "Deploy for Free" then click on "View" once the app finishes deploying.
 
-### 2. Test your Parse Server
+#### 2. Test your Parse Server
 
 You should have a Parse Server up and running at this point. If everything went fine, you will see the message "I dream of being a web site." at https://myHerokuApp.herokuapp.com/.
 
-### 3. Save your first object
+#### 3. Save your first object
 
 Create your first object by running the following command from the command line, replacing "myAppId" and "myHerokuApp" with the actual application id and Heroku app for your Parse Server.
 
@@ -60,7 +60,7 @@ You should see a response similar to this:
 
 Congratulations, you have saved your first object to your own Parse Server.
 
-### 4. Connect your app to Parse Server
+#### 4. Connect your app to Parse Server
 
 With the Parse Server correctly set up, you can now configure your client app to talk to this server. The following is an example of how you would do this from a JavaScript application. You can find examples for all other platforms in the [Parse Server guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide#using-parse-sdks-with-parse-server).
 
