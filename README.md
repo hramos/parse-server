@@ -20,42 +20,55 @@ If you're interested in developing for Parse Server, the [Development guide](htt
 
 The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
 
-## Getting Started
+## Quick Start
 
-We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository.
+We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository along with several deployment options.
 
-The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [README](https://github.com/ParsePlatform/parse-server-example) within the parse-server-example repository.
+This Quick Start will guide you through the steps to set up your first Parse Server on Heroku with the MongoLab add-on.
 
-### 1. Deploy to Heroku
+### 1. Deploy to Heroku + MongoLab
 
-Click the Heroku Button below to automatically provision the example server as a new application on Heroku, using MongoLab as your database provider.
+Click the Heroku Button to automatically provision the example server as a new application on Heroku:
 
 <a href="https://heroku.com/deploy?template=https://github.com/ParsePlatform/parse-server-example" target="_blank">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
-You will be asked for an application id and master key. You can choose any value you want for each of these variables. Click on `Deploy for Free` and come back here once the app has been deployed.
+You will be asked for an application id and master key. You can choose any value you want for each of these variables. Click on "Deploy for Free" then click on "View" once the app finishes deploying.
 
-### 2. Create your first object
+### 2. Test your Parse Server
 
-At this point, you now have a Parse Server up and running. You can create your first object by running the following command from the command line. Replace your app id.
+You should have a Parse Server up and running at this point. If everything went fine, you will see the message "I dream of being a web site." at https://myHerokuApp.herokuapp.com/.
 
+### 3. Save your first object
+
+Create your first object by running the following command from the command line, replacing "myAppId" and "myHerokuApp" with the actual application id and Heroku app for your Parse Server.
+
+```
 curl -X POST \
-  -H "X-Parse-Application-Id: YOUR_PARSE_APP_ID" \
+  -H "X-Parse-Application-Id: myAppId" \
   -H "Content-Type: application/json" \
   -d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
-  https://YOUR_HEROKU_URL/parse/classes/GameScore
+  https://myHerokuApp.herokuapp.com/parse/classes/GameScore
+```
 
-Some example curl to test if the api server is up and running
+You should see a response similar to this:
 
+```
+{"objectId":"EG8GSQmagw","createdAt":"2016-02-19T00:16:29.318Z"}
+```
 
-### 3. Connect your app to Parse Server
+Congratulations, you have saved your first object to your own Parse Server.
 
-Redirect to Quick Starts on Parse.com?
+### 4. Connect your app to Parse Server
 
+With the Parse Server correctly set up, you can now configure your client app to talk to this server. The following is an example of how you would do this from a JavaScript application. You can find examples for all other platforms in the [Parse Server guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide#using-parse-sdks-with-parse-server).
 
+```js
+Parse.initialize("yourAppId");
+Parse.serverURL = 'http://localhost:1337/parse'
+```
 ---
-
 
 #### Basic options:
 
