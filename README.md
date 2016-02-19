@@ -36,11 +36,9 @@ Click the Heroku Button to automatically provision the example server as a new a
 
 You will be asked for an application id and master key. You can choose any value you want for each of these variables. Click on "Deploy for Free" then click on "View" once the app finishes deploying.
 
-#### 2. Test your Parse Server
-
 You should have a Parse Server up and running at this point. If everything went fine, you will see the message "I dream of being a web site." at https://myHerokuApp.herokuapp.com/.
 
-#### 3. Save your first object
+#### 2. Save your first object
 
 Create your first object by running the following command from the command line, replacing "myAppId" and "myHerokuApp" with the actual application id and Heroku app for your Parse Server.
 
@@ -60,7 +58,7 @@ You should see a response similar to this:
 
 Congratulations, you have saved your first object to your own Parse Server.
 
-#### 4. Connect your app to Parse Server
+#### 3. Connect your app to Parse Server
 
 With the Parse Server correctly set up, you can now configure your client app to talk to this server. The following is an example of how you would do this from a JavaScript application. You can find examples for all other platforms in the [Parse Server guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide#using-parse-sdks-with-parse-server).
 
