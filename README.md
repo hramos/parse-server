@@ -10,19 +10,9 @@ Parse Server works with the Express web application framework. It can be added t
 
 Read the announcement blog post here:  http://blog.parse.com/announcements/introducing-parse-server-and-the-database-migration-tool/
 
-## Documentation
-
-Documentation for Parse Server is available in the [wiki](https://github.com/ParsePlatform/parse-server/wiki) for this repository. The [Parse Server guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide) is a good place to get started.
-
-If you're interested in developing for Parse Server, the [Development guide](https://github.com/ParsePlatform/parse-server/wiki/Development-Guide) will help you get set up.
-
-#### Migration Guide
-
-The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
-
 ## Quick Start
 
-We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository along with several deployment options.
+We have provided a basic Node.js application that uses the Parse Server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository along with several deployment options.
 
 This Quick Start will guide you through the steps to set up your first Parse Server on Heroku with the MongoLab add-on.
 
@@ -68,37 +58,55 @@ Parse.serverURL = 'http://localhost:1337/parse'
 ```
 ---
 
-#### Basic options:
+## Documentation
 
-* databaseURI (required) - The connection string for your database, i.e. `mongodb://user:pass@host.com/dbname`
-* appId (required) - The application id to host with this server instance
-* masterKey (required) - The master key to use for overriding ACL security
-* cloud - The absolute path to your cloud code main.js file
-* fileKey - For migrated apps, this is necessary to provide access to files already hosted on Parse.
-* facebookAppIds - An array of valid Facebook application IDs.
-* serverURL - URL which will be used by Cloud Code functions to make requests against.
-* push - Configuration options for APNS and GCM push.  See the [wiki entry](https://github.com/ParsePlatform/parse-server/wiki/Push).
+Documentation for Parse Server is available in the [wiki](https://github.com/ParsePlatform/parse-server/wiki) for this repository. The [Parse Server guide](https://github.com/ParsePlatform/parse-server/wiki/Parse-Server-Guide) is a good place to get started.
 
-#### Client key options:
+If you're interested in developing for Parse Server, the [Development guide](https://github.com/ParsePlatform/parse-server/wiki/Development-Guide) will help you get set up.
 
-The client keys used with Parse are no longer necessary with parse-server.  If you wish to still require them, perhaps to be able to refuse access to older clients, you can set the keys at initialization time.  Setting any of these keys will require all requests to provide one of the configured keys.
+#### Migration Guide
 
-* clientKey
-* javascriptKey
-* restAPIKey
-* dotNetKey
+The hosted version of Parse will be fully retired on January 28th, 2017. If you are planning to migrate an app, you need to begin work as soon as possible. Learn more in the [Migration guide](https://github.com/ParsePlatform/parse-server/wiki/Migrating-an-Existing-Parse-App).
 
-#### OAuth Support
+### Configuration
 
-parse-server supports 3rd party authentication with
+#### Basic options
+
+* `databaseURI` (required) - The connection string for your database, i.e. `mongodb://user:pass@host.com/dbname`
+* `appId` (required) - The application id to host with this server instance
+* `masterKey` (required) - The master key to use for overriding ACL security
+* `cloud` - The absolute path to your cloud code main.js file
+* `fileKey` - For migrated apps, this is necessary to provide access to files already hosted on Parse.
+* `facebookAppIds` - An array of valid Facebook application IDs.
+* `serverURL` - URL which will be used by Cloud Code functions to make requests against.
+* `push` - Configuration options for APNS and GCM push. See the [wiki entry](https://github.com/ParsePlatform/parse-server/wiki/Push).
+
+#### Client key options
+
+The client keys used with Parse are no longer necessary with Parse Server. If you wish to still require them, perhaps to be able to refuse access to older clients, you can set the keys at initialization time. Setting any of these keys will require all requests to provide one of the configured keys.
+
+* `clientKey`
+* `javascriptKey`
+* `restAPIKey`
+* `dotNetKey`
+
+#### Advanced options
+
+* `filesAdapter` - The default behavior (GridStore) can be changed by creating an adapter class (see [`FilesAdapter.js`](https://github.com/ParsePlatform/parse-server/blob/master/src/Adapters/Files/FilesAdapter.js))
+* `databaseAdapter` (unfinished) - The backing store can be changed by creating an adapter class (see `DatabaseAdapter.js`)
+* `loggerAdapter` - The default behavior/transport (File) can be changed by creating an adapter class (see [`LoggerAdapter.js`](https://github.com/ParsePlatform/parse-server/blob/master/src/Adapters/Logger/LoggerAdapter.js))
+* `enableAnonymousUsers` - Defaults to true. Set to false to disable anonymous users.
+
+##### OAuth support
+
+Parse Server supports 3rd party authentication with
 
 * Twitter
 * Meetup
-* Linkedin
+* LinkedIn
 * Google
 * Instagram
 * Facebook
-
 
 Configuration options for these 3rd-party modules is done with the oauth option passed to ParseServer:
 
@@ -117,7 +125,7 @@ Configuration options for these 3rd-party modules is done with the oauth option 
 }
 ```
 
-#### Custom Authentication
+###### Custom authentication
 
 It is possible to leverage the OAuth support with any 3rd party authentication that you bring in.
 
@@ -138,17 +146,9 @@ On this module, you need to implement and export those two functions `validateAu
 
 For more informations about custom auth please see the examples:
 
-- [facebook OAuth](https://github.com/ParsePlatform/parse-server/blob/master/src/oauth/facebook.js)
-- [twitter OAuth](https://github.com/ParsePlatform/parse-server/blob/master/src/oauth/twitter.js)
-- [instagram OAuth](https://github.com/ParsePlatform/parse-server/blob/master/src/oauth/instagram.js)
-
-
-#### Advanced options:
-
-* filesAdapter - The default behavior (GridStore) can be changed by creating an adapter class (see [`FilesAdapter.js`](https://github.com/ParsePlatform/parse-server/blob/master/src/Adapters/Files/FilesAdapter.js))
-* databaseAdapter (unfinished) - The backing store can be changed by creating an adapter class (see `DatabaseAdapter.js`)
-* loggerAdapter - The default behavior/transport (File) can be changed by creating an adapter class (see [`LoggerAdapter.js`](https://github.com/ParsePlatform/parse-server/blob/master/src/Adapters/Logger/LoggerAdapter.js))
-* enableAnonymousUsers - Defaults to true. Set to false to disable anonymous users.
+- [Facebook OAuth](https://github.com/ParsePlatform/Parse Server/blob/master/src/oauth/facebook.js)
+- [Twitter OAuth](https://github.com/ParsePlatform/parse-server/blob/master/src/oauth/twitter.js)
+- [Instagram OAuth](https://github.com/ParsePlatform/parse-server/blob/master/src/oauth/instagram.js)
 
 
 
@@ -220,7 +220,7 @@ To start the server, just run `npm start`.
 
 ##### Global installation
 
-You can install parse-server globally
+You can install Parse Server globally
 
 `$ npm install -g parse-server`
 
