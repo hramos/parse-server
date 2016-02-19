@@ -22,19 +22,19 @@ The hosted version of Parse will be fully retired on January 28th, 2017. If you 
 
 ## Getting Started
 
-We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [example/](example/) directory in this repo.
+We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository.
 
-The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [README](example/README.md) in the `example/` directory.
+The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [README](https://github.com/ParsePlatform/parse-server-example) within the parse-server-example repository.
 
 ### 1. Deploy to Heroku
 
 Click the Heroku Button below to automatically provision the example server as a new application on Heroku, using MongoLab as your database provider.
 
-<a href="https://heroku.com/deploy?template=https://github.com/hramos/parse-server/tree/quickstart" target="_blank">
+<a href="https://heroku.com/deploy?template=https://github.com/ParsePlatform/parse-server-example" target="_blank">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
-You will be asked for an application id and master key. You can choose any value you want for each of these variables.
+You will be asked for an application id and master key. You can choose any value you want for each of these variables. Click on `Deploy for Free` and come back here once the app has been deployed.
 
 ### 2. Create your first object
 
@@ -47,6 +47,7 @@ curl -X POST \
   https://YOUR_HEROKU_URL/parse/classes/GameScore
 
 Some example curl to test if the api server is up and running
+
 
 ### 3. Connect your app to Parse Server
 
