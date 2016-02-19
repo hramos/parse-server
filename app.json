@@ -1,8 +1,8 @@
 {
   "name": "Parse Server Example",
   "description": "An example Parse API server using the parse-server module",
-  "repository": "https://github.com/hramos/parse-server/blob/master/examples/parse-server-example",
-  "logo": "https://avatars0.githubusercontent.com/u/1294580?v=3&s=200",
+  "repository": "https://github.com/hramos/parse-server/blob/master/example",
+  "logo": "https://github.com/ParsePlatform/parse-server/raw/master/.github/parse-server-logo.png?raw=true",
   "keywords": ["node", "express", "parse"],
   "env": {
     "PARSE_MOUNT": {

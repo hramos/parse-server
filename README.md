@@ -22,55 +22,29 @@ The hosted version of Parse will be fully retired on January 28th, 2017. If you 
 
 ## Getting Started
 
-We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) repository.
+We have provided a basic Node.js application that uses the parse-server module on Express. You can find the example application in the [example/](example/) directory in this repo.
 
-The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [parse-server-example](https://github.com/ParsePlatform/parse-server-example) README.
-
+The following guide shows how you can deploy your own Parse API server to Heroku. If you'd like to learn more about deploying this example project locally or to a provider of your own choosing, please refer to the [README](example/README.md) in the `example/` directory.
 
 ### 1. Deploy to Heroku
 
-Click the Heroku Button to automatically set up parse-server-example as a new application on Heroku. You will be asked for an application id and master key. You can choose any unique string for each of these variables.
+Click the Heroku Button below to automatically provision the example server as a new application on Heroku, using MongoLab as your database provider.
 
 <a href="https://heroku.com/deploy?template=https://github.com/hramos/parse-server/tree/quickstart" target="_blank">
   <img src="https://www.herokucdn.com/deploy/button.svg" alt="Deploy">
 </a>
 
+You will be asked for an application id and master key. You can choose any value you want for each of these variables.
 
+### 2. Create your first object
 
-curl -n -X POST https://api.heroku.com/app-setups \
- -H "Content-Type:application/json" \
-  -H "Accept:application/vnd.heroku+json; version=3" \
-   -d '{"source_blob": { "url":"https://github.com/hramos/parse-server/tarball/quickstart/"} }'
+At this point, you now have a Parse Server up and running. You can create your first object by running the following command from the command line. Replace your app id.
 
-
-Testing other integrations:
-
-AWS:
-
-<a title="Deploy to AWS" href="https://console.aws.amazon.com/elasticbeanstalk/home?region=us-west-2#/newApplication?applicationName=ParseServer&solutionStackName=Node.js&tierName=WebServer&sourceBundleUrl=https://s3.amazonaws.com/elasticbeanstalk-samples-us-east-1/eb-parse-server-sample/parse-server-example.zip" target="_blank"><img src="http://d0.awsstatic.com/product-marketing/Elastic%20Beanstalk/deploy-to-aws.png" height="40"></a>
-
-_This needs to be fixed so that we use some zip file that is automatically updated when examples/ is updated.
-
-http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/launch-now-url.html
-
-AWS requires uploading project to S3 or somewhere
-https://console.aws.amazon.com/elasticbeanstalk/home?region=us-east-1#/newApplication?applicationName=ParseServer&solutionStackName=Node.js&tierName=WebServer&sourceBundleUrl=https://s3.amazonaws.com/elasticbeanstalk-samples-us-east-1/eb-parse-server-sample/parse-server-example.zip
-
-Azure:
-
-[![Deploy to Azure](http://azuredeploy.net/deploybutton.png)](https://azuredeploy.net/)
-
-<a href="https://azuredeploy.net/?repository=https://github.com/hramos/parse-server" target="_blank">
-    <img src="http://azuredeploy.net/deploybutton.png"/>
-</a>
-
-Scalingo:
-
-[![Deploy to Scalingo](https://cdn.scalingo.com/deploy/button.svg)](https://my.scalingo.com/deploy)
-
-
-
-### 2. Test!
+curl -X POST \
+  -H "X-Parse-Application-Id: YOUR_PARSE_APP_ID" \
+  -H "Content-Type: application/json" \
+  -d '{"score":1337,"playerName":"Sean Plott","cheatMode":false}' \
+  https://YOUR_HEROKU_URL/parse/classes/GameScore
 
 Some example curl to test if the api server is up and running
 
